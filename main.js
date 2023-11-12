@@ -8,14 +8,13 @@ let correo = prompt("Requiere enviar un paquete o verificar seguimiento?");
 if(correo !== servicios){
     alert("El servicio que busca no corresponde")
 }else{
-    alert("vamos alla!")
+    correo == servicios
+    peso();
+    Envio();
 }
-
-
-
 function peso(){
     let kg = 970;
-    let peso = prompt("indique el peso aproximado de su encomienda");
+    let peso = parseFloat(prompt("ingrese el peso del producto a enviar"));
     for (let i = 0; i = peso;){
     i *= kg;
     alert("el costo de su envio es de " + i);
@@ -24,7 +23,8 @@ function peso(){
    let e = confirm("desea continuar con el envio?");
 }
 function Envio(){
-    let env = prompt("ingrese destino del paquete")
+   alert("Nuestro alcance de envio es (La plata, Caba, Gba)")
+   let env =  prompt("ingrese localidad a la que requiere hacer el envio");
 switch(env){
  case "la plata":
      alert("su encomienda llegara en 24hs");
@@ -39,8 +39,4 @@ switch(env){
      alert("fuera de alcance de envio, disculpe!");
      break;
 }
-}
-if(correo == servicios){
-    peso();
-    Envio();
 }
