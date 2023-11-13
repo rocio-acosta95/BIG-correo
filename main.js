@@ -17,9 +17,11 @@ function peso(){
     let precioFinal;
     do{
         precioFinal = parseFloat(prompt("ingrese el peso de lo que quiere enviar"))
+    }while(isNaN(precioFinal)){
         precioFinal *= precioPorKg
-    }while(isNaN(precioFinal));
-    alert("el costo de su envio es de " + precioFinal);
+        alert("el costo de su envio es de " + precioFinal);
+    }
+    
 }
 
 function Envio(){
