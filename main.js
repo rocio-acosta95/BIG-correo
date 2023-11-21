@@ -45,14 +45,20 @@ switch(env){
 }
 
 
+
+//Implemente el metodo Find para que recorra un array con los numeros de seguimiento asignados 
+//Si el numero ingresado por el usuario se encuentra dentro del array se ejecuta la funcion IF que informa que fue despachado.
+// sino es un numero inexistente.
 function seguimiento(){
 
 let numero = parseInt(prompt("ingrese su numero de seguimiento"));
 const numSeguimiento = [243460, 859674, 544014]
 
-for(let i = 0; i < numSeguimiento.length; i++){
-    if(numero === numSeguimiento[i]){
-        alert("su pedido " + numero + " fue despachado se entregara dentro del plazo informado")
-    }
-}
+const arr = numSeguimiento.find( (x) => x == numero)
+if(arr == numero){
+    alert("el pedido " + arr + " fue despachado con exito llegara dentro del plazo informado.")
+}else{
+    alert("el pedido " + numero + " no es un numero de seguimiento existente")
+};
+
 }
