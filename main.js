@@ -4,12 +4,15 @@ alert("Bienvenido a BIG envios");
 alert("Servicio de envios por paqueteria y seguimiento");
 
 const servicios = "envio";
+const servicio2 =  "seguimiento";
 let correo = prompt("Requiere hacer un envio o consultar seguimiento?");
 if(correo == servicios){
     peso();
     Envio();
 }else{
-    seguimiento()
+    if(correo==servicio2){
+        seguimiento();
+    }
 }
 
 function peso(){
@@ -28,37 +31,35 @@ function peso(){
 function Envio(){
    alert("Nuestro alcance de envio es (La plata, Caba, Gba)")
    let env =  prompt("ingrese localidad a la que requiere hacer el envio");
-switch(env){
- case "la plata":
-     alert("su encomienda llegara en 24hs. Su numero de seguimiento es #243460");
-     break;
- case "caba":
-     alert("su encomienda llegara entre 48-72hs. Su numero de seguimiento es #859674");
-     break;
- case "gba":
-     alert("su encomienda llegara entre 72-96hs. Su numero de seguimiento es #440145");
-     break;
- default:
-     alert("fuera de alcance de envio, disculpe!");
-     break;
+   switch(env){
+    case "la plata":
+        alert("su encomienda llegara en 24hs. Su numero de seguimiento es #243460");
+        break;
+    case "caba":
+        alert("su encomienda llegara entre 48-72hs. Su numero de seguimiento es #859674");
+        break;
+    case "gba":
+        alert("su encomienda llegara entre 72-96hs. Su numero de seguimiento es #440145");
+        break;
+    default:
+        alert("fuera de alcance de envio, disculpe!");
+        break;
+   }
 }
-}
 
-
-
-//Implemente el metodo Find para que recorra un array con los numeros de seguimiento asignados 
-//Si el numero ingresado por el usuario se encuentra dentro del array se ejecuta la funcion IF que informa que fue despachado.
-// sino es un numero inexistente.
+//Use el metodo find para confirmar el numero de seguimiento dentro de un array de objetos 
+//y un if else para confirmar el pedido
 function seguimiento(){
-
+const numSeguimiento = [
+    {ciudad: "la plata", codigo: 243460},
+    {ciudad: "buenos aires", codigo: 859674},
+    {ciudad: "gran buenos aires", codigo: 440145}
+]
 let numero = parseInt(prompt("ingrese su numero de seguimiento"));
-const numSeguimiento = [243460, 859674, 544014]
-
-const arr = numSeguimiento.find( (x) => x == numero)
-if(arr == numero){
-    alert("el pedido " + arr + " fue despachado con exito llegara dentro del plazo informado.")
+let pedido = numSeguimiento.find(objeto => objeto.codigo === numero);
+if(pedido){
+    alert("el pedido " + numero + " fue despachado con exito esperelo dentro del plazo informado, muchas gracias")
 }else{
-    alert("el pedido " + numero + " no es un numero de seguimiento existente")
-};
-
+    alert("no se encontro ningun pedido relacionado con el numero ingresado, verifiquelo y intentelo mas tarde.")
+}
 }

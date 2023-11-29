@@ -1,0 +1,129 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  background-image: url(./imagenes/mancha\ titulo.jpg);
+}
+.ventanas{
+    text-decoration: none;
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+.carousel-inner{
+    height: 650px;
+}
+.boton{
+    margin: 5px;
+    padding: 5px;
+    background-color:rgba(128, 128, 128, 0.685);
+    border-radius: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card{
+background-color: rgba(210, 102, 30, 0.616);
+padding: 2rem;
+z-index: 4;
+margin: -150px;
+margin-left: auto;
+margin-right: auto;
+}
+.card .card-interno .card-title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.card .card-interno p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.titulo-secundario{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 15rem;
+}
+.titulo-secundario h4{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+    color: rgba(128, 128, 128, 0.829);
+}
+.contenedor{
+    margin-top: 3rem;
+    padding: 2rem;
+    justify-content:space-around;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contenedor .titulo-tarjeta{
+    margin: 1rem;
+    font-size: 30px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.contenedor .texto-tarjeta{
+    padding: 2rem;
+    font-size: 20px;
+   font-family:'Times New Roman', Times, serif;
+
+
+}
+.novedades{
+    justify-content: center;
+    justify-content: space-around;
+}
+.nov{
+    overflow: hidden;
+    background-color: rgba(210, 102, 30, 0.616);
+    border-radius: 2rem;
+}
+.nov .nov-texto p{
+    padding: 1rem;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+}
+.pie{
+   background-color: #f5893079;
+   border-radius: 6px;
+}
+
+
+
+@media screen and (max-width: 480px){
+
+    .tarjeta-contenedor{
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        margin-top: -10rem;
+        position: relative;
+        gap: 20rem;
+    }
+    .tarjeta-contenedor .card{
+        background-color: #f58930bd;
+    }
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 2.8rem;
+}
+.tarjetita{
+    background-color: rgba(128, 128, 128, 0.425);
+}
+.novedades{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+}
