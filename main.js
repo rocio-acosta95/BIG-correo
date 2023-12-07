@@ -1,12 +1,3 @@
-Swal.fire({
-    title: "Sweet!",
-    text: "Modal with a custom image.",
-    imageUrl: "https://img.freepik.com/vector-gratis/ilustracion-servicios-oficina-correos_335657-511.jpg",
-    imageWidth: 400,
-    imageHeight: 200,
-    imageAlt: "Custom image"
-  });
-
 
 //EVENTOS QUE CALCULA EL PESO ESTIMADO DE UN ENVIO 
 //SE GUARDO EN EL LOCALSTORAGE EL COSTO POR KILO DE LOS ENVIOS
