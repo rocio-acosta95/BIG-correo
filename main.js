@@ -1,65 +1,66 @@
+Swal.fire({
+    title: "Sweet!",
+    text: "Modal with a custom image.",
+    imageUrl: "https://img.freepik.com/vector-gratis/ilustracion-servicios-oficina-correos_335657-511.jpg",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Custom image"
+  });
 
 
-alert("Bienvenido a BIG envios");
-alert("Servicio de envios por paqueteria y seguimiento");
+//EVENTOS QUE CALCULA EL PESO ESTIMADO DE UN ENVIO 
+//SE GUARDO EN EL LOCALSTORAGE EL COSTO POR KILO DE LOS ENVIOS
+//SE AGREGO JSON PARA IR REGISTRANDO LOS ULTIMOS COSTOS.
+let cantidad = document.getElementById("peso");
+const precioPorKg = 970;
+localStorage.setItem(`precioPorKg`, 970);
+cantidad.addEventListener("change", function(event){
+    event.preventDefault()
+    if(event.target.value === null){
+        console.log("no corresponde");
+    }else{
+        let costo = parseFloat(event.target.value) * precioPorKg;
+        alert("El costo es " + costo.toFixed(2))
+        localStorage.setItem("UltimoPrecio", JSON.stringify(costo));
+    }});
 
-const servicios = "envio";
-const servicio2 =  "seguimiento";
-let correo = prompt("Requiere hacer un envio o consultar seguimiento?");
-if(correo == servicios){
-    peso();
-    Envio();
-}else{
-    if(correo==servicio2){
-        seguimiento();
-    }
-}
 
-function peso(){
-   const precioPorKg = 970;
-    let precioFinal;
-    do{
-        precioFinal = parseFloat(prompt("ingrese el peso de lo que quiere enviar"))
-    }while(isNaN(precioFinal)){
-        precioFinal *= precioPorKg
-        alert("el costo de su envio es de " + precioFinal);
-    }
+//EVENTO QUE RECORRE UN ARRAY DEL ALCANCE DE ENVIO Y DEMORA.
+// SE GUARDO EN EL LOCALSTORAGE UN ARRAY DE LAS LOCALIDADES DE ALCANCE
+//SE UTILIZA EL LOCALSTORAGE PARA ALMACENAR LOCALIDADES QUE NO ESTAN DENTRO DEL ALCANCE.
+const lista = ["la plata", "caba", "gba",]
+localStorage.setItem("lista", ["la plata", "caba", "gba",])
+let destino = document.getElementById("destino");
+destino.addEventListener("change", function(event){
+    event.preventDefault() 
+    if(lista.includes(event.target.value)){
+        alert("el traslado a " + event.target.value + " demora entre 48/72hs");
+    }else{
+        alert("el traslado a " + event.target.value + " demora entre 72/96hs");
+    }})
     
-}
+    
+
+// 3 TARJETAS DE INFORMACION IMPORTANTES CREADOS CON DOM //
+const contenido = document.getElementById("contenedor");
+
+let item1 = document.createElement("div");
+item1.classList.add("tarjetita");
+item1.innerHTML = `<h5 class="titulo-tarjeta">eCarta Documento</h5>`;
+item1.innerHTML += `<p class="texto-tarjeta">Ofrecemos almacenamiento, gestión de stock y nos ocupamos de la preparación de tus envíos gracias a nuestros centros de fulfillment, distribuidos estratégicamente en las principales ciudades del país.</p>`;
+
+let item2 = document.createElement("div");
+item2.classList.add("tarjetita");
+item2.innerHTML = `<h5 class="titulo-tarjeta">FulFillMent</h5>`;
+item2.innerHTML += `<p class="texto-tarjeta">Ofrecemos almacenamiento, gestión de stock y nos ocupamos de la preparación de tus envíos gracias a nuestros centros de fulfillment, distribuidos estratégicamente en las principales ciudades del país.</p>`;
+
+let item3 = document.createElement("div");
+item3.classList.add("tarjetita");
+item3.innerHTML = `<h5 class="titulo-tarjeta">Logistica Inversa</h5>`;
+item3.innerHTML += `<p class="texto-tarjeta">Entendiendo la necesidad del mercado, ofrecemos un servicio de Cambios y Devoluciones de paquetería adaptado a la necesidad del segmento de eCommerce. </p>`;
+
+contenido.append(item1);
+contenido.append(item2);
+contenido.append(item3);
 
 
-function Envio(){
-   alert("Nuestro alcance de envio es (La plata, Caba, Gba)")
-   let env =  prompt("ingrese localidad a la que requiere hacer el envio");
-   switch(env){
-    case "la plata":
-        alert("su encomienda llegara en 24hs. Su numero de seguimiento es #243460");
-        break;
-    case "caba":
-        alert("su encomienda llegara entre 48-72hs. Su numero de seguimiento es #859674");
-        break;
-    case "gba":
-        alert("su encomienda llegara entre 72-96hs. Su numero de seguimiento es #440145");
-        break;
-    default:
-        alert("fuera de alcance de envio, disculpe!");
-        break;
-   }
-}
-
-//Use el metodo find para confirmar el numero de seguimiento dentro de un array de objetos 
-//y un if else para confirmar el pedido
-function seguimiento(){
-const numSeguimiento = [
-    {ciudad: "la plata", codigo: 243460},
-    {ciudad: "buenos aires", codigo: 859674},
-    {ciudad: "gran buenos aires", codigo: 440145}
-]
-let numero = parseInt(prompt("ingrese su numero de seguimiento"));
-let pedido = numSeguimiento.find(objeto => objeto.codigo === numero);
-if(pedido){
-    alert("el pedido " + numero + " fue despachado con exito esperelo dentro del plazo informado, muchas gracias")
-}else{
-    alert("no se encontro ningun pedido relacionado con el numero ingresado, verifiquelo y intentelo mas tarde.")
-}
-}

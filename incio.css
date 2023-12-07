@@ -19,6 +19,12 @@
 .carousel-inner{
     height: 650px;
 }
+.form-select{
+    margin: 1rem;
+    width: 190px;
+    background-color:rgba(128, 128, 128, 0.514);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .boton{
     margin: 5px;
     padding: 5px;
@@ -79,15 +85,18 @@ margin-right: auto;
 .novedades{
     justify-content: center;
     justify-content: space-around;
+    padding: 2rem;
+    margin: 2rem;
 }
 .nov{
     overflow: hidden;
     background-color: rgba(210, 102, 30, 0.616);
     border-radius: 2rem;
+    width: 350px;
 }
 .nov .nov-texto p{
     padding: 1rem;
-    font-family:'Times New Roman', Times, serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     text-align: center;
 }
@@ -124,6 +133,7 @@ margin-right: auto;
 .novedades{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 }
