@@ -28,9 +28,6 @@
               <li class="ventanas m-5 p-1">
                 <a class="nav-link " href="./contacto.html">CONTACTO</a>
               </li>
-              <li class="ingreso m-5 p-1">
-                <a class="nav-link active" aria-current="page" href="./ingreso.html">INGRESAR</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -62,24 +59,24 @@
 
 
 <!--TARJETAS, DEMORA, PESO, SUCURSAL-->
-      <div class="d-flex tarjeta-contenedor">
-        <div class="card" style="width: 18rem;">
-          <section class="card-interno">
-            <h5 class="card-title">CONSULTE POR EL TIEMPO DEL ENVIO</h5>
-            <select id="selector" class="form-select" aria-label="Default select example">
-              <option selected>Tipo de Envio</option>
-              <option value="1">Paqueteria</option>
-              <option value="2">Cartas / Telegramas</option>
-              <option value="3">Entrada Eventos</option>
-            </select>
-            <select id="selector" class="form-select" aria-label="Default select example">
-              <option selected>Localidad</option>
-              <option value="2">Caba</option>
-              <option value="3">GBA</option>
-              <option value="4">La Plata</option>
-            </select>
-      <button type="submit" class="boton p-1 m-3" href="#" id="info">CONSULTAR</button>
-      </section>
+<div class="d-flex tarjeta-contenedor">
+ <div class="card" style="width: 18rem;">
+<section class="card-interno">
+<h5 class="card-title">CONSULTE POR EL TIEMPO DEL ENVIO</h5>     
+<select class="form-select" id="select">
+  <option selected>Tipo de Envio</option>
+  <option value="1">Telegramas</option>
+  <option value="2">Paqueteria</option>
+  <option value="3">Entradas</option>
+</select>
+<select id="selector" class="form-select" aria-label="Default select example">
+<option selected>Localidad</option>
+<option value="2">Caba</option>
+<option value="3">GBA</option>
+<option value="4">La Plata</option>
+ </select>
+  <button type="submit" class="boton p-1 m-3" href="#" id="info">CONSULTAR</button>
+  </section>
     </div>
 
     <div class="card" style="width: 18rem;">
@@ -90,6 +87,20 @@
   <button type="submit" class="boton p-1 m-3" href="#" id="calculo">CALCULAR</button>
   </section>
 </div>
+
+<div class="card" style="width: 18rem;">
+  <section class="card-interno">
+  <h5 class="card-title">SUCURSAL MAS CERCANA</h5>     
+  <select class="form-select" id="reclamos">
+    <option selected>Tipo de Servicio</option>
+    <option value="1">Paqueteria</option>
+    <option value="2">Cartas / Telegramas</option>
+    <option value="3">Entradas espectalucos</option>
+  </select>
+ <input type="text" class="form-text rounded-1 p-1 m-3 " required placeholder="ingrese su localidad">
+    <button type="submit" class="boton p-1 m-3" href="#" id="envio">Buscar</button>
+    </section>
+      </div>
       </div>
 
 
@@ -121,9 +132,13 @@
   <a class="ventanas" href="">SEGURIDAD</a>
   <a class="ventanas" href="">CONTACTO</a>
 </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
